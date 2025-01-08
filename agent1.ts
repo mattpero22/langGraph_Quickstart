@@ -1,4 +1,4 @@
-// agent.ts
+// agent1.ts
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -27,7 +27,7 @@ const agent = createReactAgent({
 // Now it's time to use!
 async function runAgent() {
     const agentFinalState = await agent.invoke(
-      { messages: [new HumanMessage("what is the current weather in sf")] },
+      { messages: [new HumanMessage("what is the cost of a gallon of gas in california?")] },
       { configurable: { thread_id: "42" } },
     );
   
@@ -36,7 +36,7 @@ async function runAgent() {
     );
   
     const agentNextState = await agent.invoke(
-      { messages: [new HumanMessage("what about ny")] },
+      { messages: [new HumanMessage("what about new york?")] },
       { configurable: { thread_id: "42" } },
     );
   
